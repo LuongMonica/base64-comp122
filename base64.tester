@@ -1,0 +1,22 @@
+#! /bin/bash
+
+BASE64=/usr/bin/base64
+
+T1="The quick brown fox"
+T2="jumped over the lazy dog"
+T3="Not once, but"
+T4="123,456,789 times"
+
+for s in  "${T1}" "${T2}" "${T3}" "${T4}" ; do 
+    echo "Testing: \"$s\""
+    echo "... Base64 Encoding: \"$( ${BASE64} <<< $s)\""
+    echo "... My Encoding:     \"$(./base64 <<< $s)\""
+        
+    r=$(./base64 <<< "$s" | ${BASE64} -d)
+    if [[ $s = $r ]] ; then
+	echo "Success"
+    else
+	echo "Failure"
+    fi
+    echo
+done

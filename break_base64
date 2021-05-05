@@ -1,0 +1,4 @@
+break base64_mapping
+break /home/users14/ml855063/comp122/base64-MonicaPikaninja/base64.c:74
+break /home/users14/ml855063/comp122/base64-MonicaPikaninja/base64.c:83
+break /home/users14/ml855063/comp122/base64-MonicaPikaninja/base64.c:84
